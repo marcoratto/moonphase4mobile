@@ -1,0 +1,8 @@
+MIDlet-1: MIDlet-1,/logo.png,uk.co.marcoratto.j2me.moonphase.MoonPhaseMIDlet
+MIDlet-Jar-Size: 109788
+MIDlet-Jar-URL: MoonPhase.jar
+MIDlet-Name: MoonPhase
+MIDlet-Vendor: Marco Ratto
+MIDlet-Version: 1.0.0
+MicroEdition-Configuration: CLDC-1.1
+MicroEdition-Profile: MIDP-2.1
