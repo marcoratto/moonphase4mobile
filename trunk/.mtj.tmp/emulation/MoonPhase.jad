@@ -1,0 +1,8 @@
+MIDlet-1: Moon Phase Calculator,/logo.png,uk.co.marcoratto.j2me.moonphase.MoonPhaseMIDlet
+MIDlet-Jar-Size: 107676
+MIDlet-Jar-URL: MoonPhase.jar
+MIDlet-Name: Moon Phase Calculator
+MIDlet-Vendor: Marco Ratto
+MIDlet-Version: 1.0.0
+MicroEdition-Configuration: CLDC-1.1
+MicroEdition-Profile: MIDP-2.1
