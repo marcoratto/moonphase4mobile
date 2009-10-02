@@ -27,6 +27,7 @@ import javax.microedition.midlet.*;
 import javax.microedition.lcdui.*;
 
 import uk.co.marcoratto.j2me.i18n.I18N;
+import uk.co.marcoratto.j2me.info.Info;
 import uk.co.marcoratto.j2me.log.Logger;
 import uk.co.marcoratto.j2me.util.MyMath;
 import uk.co.marcoratto.j2me.about.About;
@@ -40,6 +41,7 @@ public class MoonPhaseMIDlet extends MIDlet implements CommandListener {
 	private Displayable currentDisplayable;
 
 	private final Command aboutCommand;
+	private final Command infoCommand;
 	private final Command logCommand;
 	private final Command yearCommand;
 	private final Command exitCommand;
@@ -69,6 +71,7 @@ public class MoonPhaseMIDlet extends MIDlet implements CommandListener {
 		logCommand = new Command("Log", Command.BACK, 2);
 		exitCommand = new Command("Exit", Command.EXIT, 3);
 		aboutCommand = new Command("About", Command.BACK, 4);
+		infoCommand = new Command("Info", Command.BACK, 5);
 		list = new List("Years 2007-2008", Choice.IMPLICIT);
 
 		try {
@@ -85,6 +88,7 @@ public class MoonPhaseMIDlet extends MIDlet implements CommandListener {
 		list.addCommand(yearCommand);
 		list.addCommand(logCommand);
 		list.addCommand(aboutCommand);
+		list.addCommand(infoCommand);
 		list.setCommandListener(this);
 
 		this.calculate(Calendar.getInstance().get(Calendar.YEAR));
@@ -114,8 +118,10 @@ public class MoonPhaseMIDlet extends MIDlet implements CommandListener {
 			this.calculate(YearForm.getInstance().getDate().get(Calendar.YEAR));
 		} else if (c == logCommand) {
 			log.show(this);
+		} else if (c == infoCommand) {
+			Info.getInstance().show(this);
 		} else if (c == aboutCommand) {
-			About.getInstance(this).show();
+			About.getInstance().show(this);
 		} else {
 			log.debug("List=" + (this.list.getSelectedIndex() % 4));
 			PictureForm.getInstance().show(this,

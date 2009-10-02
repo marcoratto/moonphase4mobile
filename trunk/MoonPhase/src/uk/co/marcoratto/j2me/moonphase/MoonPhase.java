@@ -19,8 +19,7 @@ class MoonPhase {
 		newMoonTime = jde;
 		time = jde;
 		caldat(jde);
-		return yearStr + ", " + dayNameStr + " " + monthStr + " " + dayStr
-				+ ", " + hourStr + " New Moon";
+		return dayStr + "/" + monthStr + "/" + yearStr + "," + hourStr + " New Moon";
 	}
 
 	public String firstQuarterStr() {
@@ -31,8 +30,7 @@ class MoonPhase {
 		jde = JDE(T, k) + quarterMoon() + quarter() + planets(T, k);
 		time = jde;
 		caldat(jde);
-		return yearStr + ", " + dayNameStr + " " + monthStr + " " + dayStr
-				+ ", " + hourStr + " First Quarter";
+		return dayStr + "/" + monthStr + "/" + yearStr + "," + hourStr + "First Quarter";
 	}
 
 	public String fullMoonStr() {
@@ -48,8 +46,7 @@ class MoonPhase {
 		// return "Full Moon " + yearStr + ", " + dayNameStr + " " + monthStr +
 		// " " + dayStr + ", " + hourStr + " " + MyMath.round(md.computeR()) + "
 		// km";
-		return yearStr + ", " + dayNameStr + " " + monthStr + " " + dayStr
-				+ ", " + hourStr + " Full Moon";
+		return dayStr + "/" + monthStr + "/" + yearStr + "," + hourStr + " Full Moon";
 	}
 
 	public String lastQuarterStr() {
@@ -60,8 +57,7 @@ class MoonPhase {
 		jde = ((JDE(T, k) + quarterMoon()) - quarter()) + planets(T, k);
 		time = jde;
 		caldat(jde);
-		return yearStr + ", " + dayNameStr + " " + monthStr + " " + dayStr
-				+ ", " + hourStr + " Last Quarter";
+		return dayStr + "/" + monthStr + "/" + yearStr + "," + hourStr + " Last Quarter";
 	}
 
 	public double JDE(double T, double k) {
@@ -221,7 +217,7 @@ class MoonPhase {
 				- (int) (30.600100000000001D * (double) F);
 		dayStr = String.valueOf(day);
 		if (day < 10) {
-			dayStr = " " + dayStr;			
+			dayStr = "0" + dayStr;			
 		}
 		int month = F - 1 - 12 * (F / 14);
 		int year = D - 4715 - (7 + month) / 10;
@@ -240,9 +236,12 @@ class MoonPhase {
 		}
 		hourStr = (int) hour + str + min;
 		if ((int) hour < 10) {
-			hourStr = " " + hourStr;
+			hourStr = "0" + hourStr;
 		}
-		monthStr = monthArray[month - 1];
+		monthStr = Integer.toString(month);
+		if (month < 10) {
+			monthStr = "0" + monthStr;			
+		}
 		dayNameStr = dayString(jd);
 		yearStr = String.valueOf(year);
 	}
@@ -323,7 +322,8 @@ class MoonPhase {
 	double newMoonTime;
 	double time;
 	boolean demo;
-	String monthArray[] = { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul",
-			"Aug", "Sep", "Oct", "Nov", "Dec" };
+
+	String monthArray[] = { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" };
+	
 	int kStart;
 }
