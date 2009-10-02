@@ -2,9 +2,9 @@
 <jnlp
   spec="1.0+"
   codebase="http://www.microemu.org/microemu-webstart"
-  href="http://beatswatchclock4j2me.googlecode.com/svn/trunk/beatswatchclock4j2me/BeatSwatch/bin/BeatSwatch.jnlp">
+  href="http://moonphase4mobile.googlecode.com/svn/trunk/MoonPhase/bin/MoonPhase.jnlp">
   <information>
-    <title>Moon Phase Calculator For Mobile</title>
+    <title>Moon Phase Calculator</title>
     <vendor>Marco Ratto</vendor>
     <homepage href="http://code.google.com/p/moonphase4mobile"/>
     <description>Moon Phase Calculator For Mobile</description>
