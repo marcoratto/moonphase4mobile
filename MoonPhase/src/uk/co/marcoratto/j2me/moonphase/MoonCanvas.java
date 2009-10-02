@@ -1,36 +1,34 @@
 /*
  * Copyright (C) 2008 Marco Ratto
  *
- * This file is part of the project Beat Swatch Clock For J2ME.
+ * This file is part of the project Moon Phase Calculator For Mobile Phone.
  *
- * Beat Swatch Clock For J2ME is free software; you can redistribute it and/or modify
+ * Moon Phase Calculator For Mobile Phone is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
  * any later version.
  *
- * Beat Swatch Clock For J2ME is distributed in the hope that it will be useful,
+ * Moon Phase Calculator For Mobile Phone is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with Beat Swatch Clock For J2ME; if not, write to the Free Software
+ * along with Moon Phase Calculator For Mobile Phone; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 package uk.co.marcoratto.j2me.moonphase;
 
-import javax.microedition.lcdui.*;
+
+import javax.microedition.lcdui.Canvas;
+import javax.microedition.lcdui.Display;
+import javax.microedition.lcdui.Font;
+import javax.microedition.lcdui.Graphics;
+import javax.microedition.lcdui.Image;
 
 import uk.co.marcoratto.j2me.log.Logger;
 
-/**
- * The component for AudioPlayer.
- * It will create a player for the selected url, play and display
- * some properties of the player.
- *
- * Use star key to increase the volume, pound key to decrease the volume
- *
- **/
+
 public class MoonCanvas extends Canvas {
     private Display parentDisplay;
     
@@ -72,10 +70,6 @@ public class MoonCanvas extends Canvas {
         int imageY = (screenHeight - imageHeight) / 2;
         log.debug("imageX=" + imageX);
         log.debug("imageY=" + imageY);
-
-        // genFrame(imageX, imageY, imageWidth, imageHeight);
-
-        // g.drawImage(image, 0, 0, Graphics.LEFT | Graphics.TOP);
         
         g.drawImage(image, imageX, imageY, Graphics.LEFT | Graphics.TOP);
         
